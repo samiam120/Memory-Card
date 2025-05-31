@@ -1,9 +1,13 @@
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f4f8;
   color: #333;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {
@@ -17,23 +21,29 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
 }
 
 .scoreboard {
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1.5rem;
   width: 100%;
   max-width: 800px;
+  padding: 1rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .card {
@@ -43,6 +53,13 @@ h1 {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card:hover {
@@ -53,11 +70,13 @@ h1 {
 .card img {
   width: 100%;
   height: auto;
+  max-height: 160px;
+  object-fit:contain;
   display: block;
 }
 
 .card p {
-  padding: 0.5rem;
-  font-size: 0.9rem;
+  padding: 0.25rem;
+  font-size: 0.8rem;
   text-align: center;
 }
